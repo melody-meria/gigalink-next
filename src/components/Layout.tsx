@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
-  Users,
+  Wifi,
   Settings,
   ChevronLeft,
   Moon,
@@ -16,9 +16,9 @@ import {
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, href: "/dashboard" },
+  { label: "Services",  icon: Wifi,            href: "/services"  },
   { label: "History",   icon: History,         href: "/history"   },
-  { label: "Sessions",  icon: Users,            href: "/sessions"  },
-  { label: "Settings",  icon: Settings,         href: "/settings"  },
+  { label: "Settings",  icon: Settings,        href: "/settings"  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -46,7 +46,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="flex items-center justify-between px-4 py-5 border-b border-slate-200 dark:border-slate-700">
           {!collapsed && (
             <span className="font-bold text-teal-600 dark:text-teal-400 text-lg tracking-tight">
-              WiFiOS
+              GIGALINK
             </span>
           )}
           <button
