@@ -10,17 +10,17 @@ import { Layout } from "@/components/Layout";
 const services = [
   {
     id: 1,
-    name: "Student Plan",
+    name: "Basic Plan",
     price: "$9.99",
     data: "1GB",
     validity: "1 Day",
-    features: ["10GB Data", "30 Days Validity", "Standard Support"],
+    features: ["1GB Data", "30 Days Validity", "Standard Support"],
     quota: 250,
     popular: false,
   },
   {
     id: 2,
-    name: "Basic Plan",
+    name: "Standard Plan",
     price: "$19.99",
     data: "2GB",
     validity: "3 Days",
@@ -30,7 +30,7 @@ const services = [
   },
   {
     id: 3,
-    name: "Standard Plan",
+    name: "Premium Plan",
     price: "0.00",
     data: "5GB",
     validity: "15 Days",
@@ -40,7 +40,7 @@ const services = [
   },
   {
     id: 4,
-    name: "Premium Plan",
+    name: "Giga Plan",
     price: "$49.99",
     data: "10GB",
     validity: "30 Days",
@@ -142,7 +142,7 @@ export function Services() {
         <div className="text-center max-w-2xl mx-auto">
           <h1 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">Our Services</h1>
           <p className="text-slate-500 dark:text-slate-400">
-            Choose the best data plan that suits your needs. Click to generate vouchers.
+            Choose the best data plan that suits your needs. Click to generate QR Code.
           </p>
         </div>
 
@@ -219,7 +219,7 @@ export function Services() {
                     ? "bg-teal-500 hover:bg-teal-600 text-white shadow-md shadow-teal-500/30"
                     : "bg-slate-100 dark:bg-slate-700 hover:bg-teal-500 hover:text-white dark:hover:bg-teal-500 text-slate-900 dark:text-white"
                 )}>
-                  Generate Voucher
+                  Generate QR Code
                 </button>
               </div>
             </motion.div>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import {
   LayoutDashboard,
   Wifi,
-  Settings,
+  // Settings,
   ChevronLeft,
   Moon,
   Sun,
@@ -20,7 +20,7 @@ const navItems = [
   { label: "Services",  icon: Wifi,            href: "/services"  },
   { label: "History",   icon: History,         href: "/history"   },
   { label: "Profile",   icon: UserCircle,      href: "/profile"   },
-  { label: "Settings",  icon: Settings,        href: "/settings"  },
+  // { label: "Settings",  icon: Settings,        href: "/settings"  },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

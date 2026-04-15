@@ -20,11 +20,11 @@ const capacityData = [
 ];
 
 const sessionsData = [
-  { id: 1, code: "****21BZ", plan: "Premium 50GB",  expiration: "2023-12-10", remaining: 12.5, status: "Online" },
-  { id: 2, code: "****02KQ", plan: "Basic 10GB",    expiration: "2023-11-25", remaining: 1.2,  status: "Used"   },
-  { id: 3, code: "****21MP", plan: "Standard 2GB",  expiration: "2023-12-01", remaining: 2,    status: "Unused" },
-  { id: 4, code: "****12RW", plan: "Standard 25GB", expiration: "2023-11-28", remaining: 4.5,  status: "Online" },
-  { id: 5, code: "****22TJ", plan: "Premium 50GB",  expiration: "2023-12-15", remaining: 45.0, status: "Unused" },
+  { id: 1, code: "****21BZ", plan: "Premium 5GB",  accessed: " 10:30:12 AM; 2023-12-10", remaining: 2.5, status: "Online" },
+  { id: 2, code: "****02KQ", plan: "Basic 1GB",    accessed: "Not yet accessed", remaining: 1,  status: "Unused"   },
+  { id: 3, code: "****21MP", plan: "Standard 2GB",  accessed: " 9:45:30 AM; 2023-12-01", remaining: 2,    status: "Online" },
+  { id: 4, code: "****12RW", plan: "Giga 10GB", accessed: " 4:20:10 PM; 2023-11-28", remaining: 4.5,  status: "Online" },
+  { id: 5, code: "****22TJ", plan: "Premium 5GB",  accessed: " 11:00:00 AM; 2023-12-15", remaining: 4, status: "Online" },
 ];
 
 const STATUS_COLORS: Record<string, string> = {
@@ -111,11 +111,11 @@ export function Dashboard() {
                   <Users size={24} />
                 </div>
               </div>
-              <div className="mt-4 flex items-center text-sm text-green-600 dark:text-green-400">
+              {/* <div className="mt-4 flex items-center text-sm text-green-600 dark:text-green-400">
                 <ArrowUpRight size={16} className="mr-1" />
                 <span className="font-medium">12%</span>
                 <span className="ml-1 text-slate-500 dark:text-slate-400">vs last month</span>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div
@@ -131,11 +131,11 @@ export function Dashboard() {
                   <Wifi size={24} />
                 </div>
               </div>
-              <div className="mt-4 flex items-center text-sm text-red-500 dark:text-red-400">
+              {/* <div className="mt-4 flex items-center text-sm text-red-500 dark:text-red-400">
                 <ArrowDownRight size={16} className="mr-1" />
                 <span className="font-medium">3%</span>
                 <span className="ml-1 text-slate-500 dark:text-slate-400">vs last month</span>
-              </div>
+              </div> */}
             </motion.div>
           </div>
         </div>
@@ -166,8 +166,9 @@ export function Dashboard() {
               <thead>
                 <tr className="text-left text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-700">
                   <th className="px-6 py-3 font-medium">Code</th>
+                  
                   <th className="px-6 py-3 font-medium">Plan</th>
-                  <th className="px-6 py-3 font-medium">Expiration</th>
+                  <th className="px-6 py-3 font-medium">Accessed</th>
                   <th className="px-6 py-3 font-medium">Remaining</th>
                   <th className="px-6 py-3 font-medium">Status</th>
                 </tr>
@@ -177,7 +178,7 @@ export function Dashboard() {
                   <tr key={session.id} className="hover:bg-slate-50 dark:hover:bg-slate-700/40 transition-colors">
                     <td className="px-6 py-4 font-mono font-medium text-slate-900 dark:text-white">{session.code}</td>
                     <td className="px-6 py-4 text-slate-600 dark:text-slate-300">{session.plan}</td>
-                    <td className="px-6 py-4 text-slate-600 dark:text-slate-300">{session.expiration}</td>
+                    <td className="px-6 py-4 text-slate-600 dark:text-slate-300">{session.accessed}</td>
                     <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                       {session.remaining === 999 ? "∞" : `${session.remaining} GB`}
                     </td>
